@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StatController : MonoBehaviour
+public class PlayerStatController : MonoBehaviour, IDamageable
 {
     private PlayerStat stat = new PlayerStat();
 
@@ -8,6 +8,18 @@ public class StatController : MonoBehaviour
     {
         stat.currentHp = stat.maxHp;    
     }
+
+    #region Damageable
+    public void TakeDamage(float damage)
+    {
+        stat.currentHp -= damage;
+
+        // player state 관련한 FSM 필요 
+        if (stat.currentHp < 0)
+        {
+        }
+    }
+    #endregion
 
     public void AddExp(int amount)
     {
@@ -64,6 +76,10 @@ public class StatController : MonoBehaviour
         stat.moveSpeed += 0.5f;
     }
 
+    public float GetPlayerAttackDamage()
+    {
+        return stat.attackPower;
+    }
     // 아래 리스트 참고해서 아이템 및 데이터셋 만들기 
 /*    public float expGainRate = 1f; // 경험치 획득 비율
     public float moveSpeed = 1f;  // 이동속도

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1865638384249570134}
   - component: {fileID: 7425916863453338458}
   - component: {fileID: 3514078233030110197}
+  - component: {fileID: 6449913313461868360}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Monster
@@ -198,6 +199,18 @@ MonoBehaviour:
   isAlive: 1
   speed: 2
   repositionDistance: 25
+--- !u!114 &6449913313461868360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120538417618744268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269df092a2f60c34185b2ffd55cfee70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterStatComponent
 --- !u!1 &5686092050651594452
 GameObject:
   m_ObjectHideFlags: 0
