@@ -30,4 +30,17 @@ public abstract class Weapon : MonoBehaviour
         return Time.time >= lastAttackTime + cooldown;
     }
 
+    protected void SetOwner(GameObject gameObject)
+    {
+        if (gameObject != null)
+        {
+            owner = gameObject.transform;
+        }
+    }
+
+    protected Transform GetOwner()
+    {
+        return owner;
+    }
+
 }

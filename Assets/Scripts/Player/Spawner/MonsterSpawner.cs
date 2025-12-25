@@ -11,14 +11,14 @@ public class MonsterSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+     /*   if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             SpawnMonsterWithCircle(10, 15, PoolingType.Monster_SkeletonKnight);
         }
         else if (Keyboard.current.altKey.wasPressedThisFrame)
         {
             SpawnMonsterRandomPoint(10, 1, PoolingType.Monster_Zombie);
-        }
+        }*/
     }
 
     public bool IsOutsideCamera(Vector2 worldPos)

@@ -1,3 +1,4 @@
+using UnityEditor.UI;
 using UnityEngine;
 
 public class SimpleOrbitalComponent : OrbitalWeapon
@@ -8,7 +9,7 @@ public class SimpleOrbitalComponent : OrbitalWeapon
     
     private GameObject[] orbitalProps;    // 생성된 Props들
     private float[] angles;               // 각 Props의 초기 각도
-    
+
     protected override void Start()
     {
         base.Start();
@@ -43,6 +44,13 @@ public class SimpleOrbitalComponent : OrbitalWeapon
                 orbitalProps[i].transform.position = initialPosition;
             }
         }
+
+        Debug.Log(propsCount);
+    }
+
+    public void FixedUpdate()
+    {
+        Debug.Log(propsCount);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,8 +59,13 @@ public class SimpleOrbitalComponent : OrbitalWeapon
         if (!collision.CompareTag("Monster"))
             return;
 
-        //collision.GetComponent<MonsterStatComponent>().GetDamage(owner.GetComponent<PlayerStatController>().GetPlayerAttackDamage());
+        // damage
+        float damage = GetComponent<PlayerStatController>().GetPlayerAttackDamage();
+        collision.GetComponent<MonsterStatComponent>().TakeDamage(damage);
 
+        // 넉백 여부 
+
+        // 
     }
 
 
